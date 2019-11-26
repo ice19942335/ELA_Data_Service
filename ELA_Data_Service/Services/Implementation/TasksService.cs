@@ -16,7 +16,7 @@ namespace ELA_Data_Service.Services.Implementation
         }
 
 
-        public Task<RandomTasksDto> GetRandomTasks(int amount)
+        public Task<ElaRandomTasksDto> GetRandomTasks(int amount)
         {
             throw new NotImplementedException();
         }

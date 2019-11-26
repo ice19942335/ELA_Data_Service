@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace ELA_Data_Service.Domain.Tasks.Dto
 {
-    public class RandomTasksDto
+    public class ElaTaskDto
     {
         public int TaskId { get; set; }
 
@@ -22,10 +25,6 @@ namespace ELA_Data_Service.Domain.Tasks.Dto
 
         public string GivenWordRus { get; set; }
 
-        public IEnumerable<GivenAnswerDto> GivenAnswers { get; set; }
-
-        public bool Success { get; set; }
-
-        public IEnumerable<string> Errors { get; set; }
+        public IEnumerable<ElaGivenAnswerDto> GivenAnswers { get; set; }
     }
 }

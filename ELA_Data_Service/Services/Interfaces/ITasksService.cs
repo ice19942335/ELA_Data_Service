@@ -8,6 +8,8 @@ namespace ELA_Data_Service.Services.Interfaces
 {
     public interface ITasksService
     {
-        Task<RandomTasksDto> GetRandomTasks(int amount);
+        Task<ElaRandomTasksDto> GetRandomTasks(int amount);
+
+        Task<ElaTaskDto> GetTaskById(int id);
     }
 }

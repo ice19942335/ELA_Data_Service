@@ -1,6 +1,6 @@
 ﻿namespace ELA_Data_Service.Domain.Tasks.Dto
 {
-    public class GivenAnswerDto
+    public class ElaGivenAnswerDto
     {
         public string Word { get; set; }
 

@@ -28,7 +28,7 @@ namespace ELA_Data_Service.Contracts.V1.Responses.Tasks
 
         public string GivenWordRus { get; set; }
 
-        public IEnumerable<GivenAnswerDto> GivenAnswers { get; set; }
+        public IEnumerable<ElaGivenAnswerDto> GivenAnswers { get; set; }
 
         public IEnumerable<string> Errors { get; set; }
     }
