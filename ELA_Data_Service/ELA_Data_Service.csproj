@@ -11,11 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Contracts\V1\Requests\" />
-    <Folder Include="Contracts\V1\Responses\" />
-    <Folder Include="Services\Interfaces\" />
-    <Folder Include="Services\Implementation\" />
-    <Folder Include="_Data\" />
+    <Folder Include="Contracts\V1\Requests\Tasks\" />
   </ItemGroup>
 
 
