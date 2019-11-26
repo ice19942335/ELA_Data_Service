@@ -11,7 +11,6 @@
     <Folder Include="Contracts\V1\Responses\" />
     <Folder Include="Contracts\V1\" />
     <Folder Include="Controllers\V1\" />
-    <Folder Include="Installers\Interfaces\" />
     <Folder Include="Services\Interfaces\" />
     <Folder Include="Services\Implementation\" />
     <Folder Include="_Data\" />
