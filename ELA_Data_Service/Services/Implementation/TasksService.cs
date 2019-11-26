@@ -15,8 +15,12 @@ namespace ELA_Data_Service.Services.Implementation
             
         }
 
-
         public Task<ElaRandomTasksDto> GetRandomTasks(int amount)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<ElaTaskDto> GetTaskById(int id)
         {
             throw new NotImplementedException();
         }

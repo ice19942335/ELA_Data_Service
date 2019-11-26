@@ -29,16 +29,26 @@ namespace ELA_Data_Service.Controllers.V1
         /// <returns></returns>
         [AllowAnonymous]
         [HttpGet(ApiRoutes.Tasks.RandomTasks)]
-        public async Task<IActionResult> Index(int amount)
+        public async Task<IActionResult> RandomTasks(int amount)
         {
             if (amount > 10 && amount <= 0)
                 return BadRequest("(Max 10, Min 1) task per request");
 
-            //var result = await _tasksService.GetRandomTasks(amount);
-
-            //if (!result.Success)
-                //return BadRequest(new RandomTasksFailedResponse{ Errors = result.Errors });
                 
+            return Ok();
+        }
+
+
+        /// <summary>
+        /// Return task by taskId
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet(ApiRoutes.Tasks.Tasks)]
+        public async Task<IActionResult> Tasks(int id)
+        {
+
+
             return Ok();
         }
     }
