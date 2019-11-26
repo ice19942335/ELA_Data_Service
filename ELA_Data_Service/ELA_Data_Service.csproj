@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UserSecretsId>aspnet-ELA_Data_Service-BD276CB9-B992-4147-85A9-B74D55EE776A</UserSecretsId>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Contracts\V1\Requests\" />
+    <Folder Include="Contracts\V1\Responses\" />
+    <Folder Include="Contracts\V1\" />
+    <Folder Include="Controllers\V1\" />
+    <Folder Include="Installers\Interfaces\" />
+    <Folder Include="Services\Interfaces\" />
+    <Folder Include="Services\Implementation\" />
+    <Folder Include="_Data\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
+  </ItemGroup>
+
+</Project>
