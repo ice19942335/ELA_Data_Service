@@ -53,16 +53,18 @@ namespace ELA_Data_Service.Services.Implementation
                 var answersEntryList = answersQuery.Where(x => x.TaskId == id).ToList();
                 var correctAnswer = answersEntryList.Single(x => x.AnswerType.Equals("correct"));
 
-                var elaTask = new ElaTaskDto();
-                elaTask.TaskId = correctAnswer.TaskId;
-                elaTask.Points = correctAnswer.Points;
-                elaTask.GivenWordId = correctAnswer.GivenWordId;
-                elaTask.TaskType = correctAnswer.TaskType;
-                elaTask.TaskDescription = correctAnswer.TaskDescription;
-                elaTask.ImgUrl = correctAnswer.ImgUrl;
-                elaTask.Transcription = correctAnswer.Transcription;
-                elaTask.GivenWordEng = correctAnswer.WordEng;
-                elaTask.GivenWordRus = correctAnswer.WordRus;
+                var elaTask = new ElaTaskDto
+                {
+                    TaskId = correctAnswer.TaskId,
+                    Points = correctAnswer.Points,
+                    GivenWordId = correctAnswer.GivenWordId,
+                    TaskType = correctAnswer.TaskType,
+                    TaskDescription = correctAnswer.TaskDescription,
+                    ImgUrl = correctAnswer.ImgUrl,
+                    Transcription = correctAnswer.Transcription,
+                    GivenWordEng = correctAnswer.WordEng,
+                    GivenWordRus = correctAnswer.WordRus
+                };
 
                 var givenAnswersList = new List<ElaGivenAnswerDto>();
 

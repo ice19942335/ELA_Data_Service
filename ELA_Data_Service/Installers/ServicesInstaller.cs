@@ -16,6 +16,7 @@ namespace ELA_Data_Service.Installers
         {
             //Transient
             services.AddTransient<ITasksService, TasksService>();
+            services.AddTransient<IUserService, UserService>();
         }
     }
 }

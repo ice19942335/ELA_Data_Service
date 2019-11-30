@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <Folder Include="Contracts\V1\Requests\Tasks\" />
+    <Folder Include="Contracts\V1\Responses\Users\" />
   </ItemGroup>
 
 
