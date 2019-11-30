@@ -49,10 +49,10 @@ namespace ELA_Data_Service.Controllers.V1
         /// <returns></returns>
         [AllowAnonymous]
         [HttpGet(ApiRoutes.TasksRoutes.Tasks)]
-        public async Task<IActionResult> Tasks(int? id)
+        public async Task<IActionResult> Tasks(int id)
         {
-            if(id is null) 
-                return BadRequest("{id} can't be null");
+            if(id == default) 
+                return BadRequest("{id} can't be 0 or null");
 
             var result = await _tasksService.GetTaskById((int)id);
 
