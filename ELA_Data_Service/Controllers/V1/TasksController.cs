@@ -29,14 +29,14 @@ namespace ELA_Data_Service.Controllers.V1
         /// <returns></returns>
         [AllowAnonymous]
         [HttpGet(ApiRoutes.TasksRoutes.RandomTasks)]
-        public async Task<IActionResult> RandomTasks(int? amount)
+        public IActionResult RandomTasks(int? amount)
         {
             if (amount > 10 || amount <= 0)
                 return BadRequest("Min amount = 1 | Max amount = 10");
-            else if(amount is null)
+            else if (amount is null)
                 return BadRequest("{amount} can't be null");
 
-            var result = await _tasksService.GetRandomTasks((int)amount);
+            var result = _tasksService.GetRandomTasks((int)amount);
 
             return Ok(result.TasksList);
         }
@@ -49,12 +49,12 @@ namespace ELA_Data_Service.Controllers.V1
         /// <returns></returns>
         [AllowAnonymous]
         [HttpGet(ApiRoutes.TasksRoutes.Tasks)]
-        public async Task<IActionResult> Tasks(int id)
+        public IActionResult Tasks(int id)
         {
-            if(id == default) 
+            if (id == default)
                 return BadRequest("{id} can't be 0 or null");
 
-            var result = await _tasksService.GetTaskById((int)id);
+            var result = _tasksService.GetTaskById((int)id);
 
             return Ok(result);
         }

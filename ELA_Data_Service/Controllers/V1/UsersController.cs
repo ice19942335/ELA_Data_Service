@@ -32,7 +32,7 @@ namespace ELA_Data_Service.Controllers.V1
         public async Task<IActionResult> Points([FromBody] UserPointsUpdateRequest request, string userId)
         {
             if (request.Action is null || request.Points == default)
-                return BadRequest("Please check your request, {action} or {points} can't be null");
+                return BadRequest("Please check your request, {action} or {points}, value can't be null");
 
             var result = await _userService.UpdatePoints(request, userId);
 

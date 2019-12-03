@@ -17,7 +17,7 @@ namespace ELA_Data_Service.Contracts.V1
         {
             public const string RandomTasks = Base + "/RandomTasks/{amount}";
 
-            public const string Tasks = Base + "/TasksRoutes/{id}";
+            public const string Tasks = Base + "/Tasks/{id}";
         }
 
         public static class UsersRoutes

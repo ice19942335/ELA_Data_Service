@@ -18,7 +18,7 @@ namespace ELA_Data_Service.Services.Implementation
             _dataContext = dataContext;
         }
 
-        public async Task<ElaRandomTasksDto> GetRandomTasks(int amount)
+        public ElaRandomTasksDto GetRandomTasks(int amount)
         {
             #region Query
 
@@ -88,7 +88,7 @@ namespace ELA_Data_Service.Services.Implementation
             return new ElaRandomTasksDto { TasksList = elaRandomTasksResult.AsEnumerable() };
         }
 
-        public async Task<ElaTaskDto> GetTaskById(int id)
+        public ElaTaskDto GetTaskById(int id)
         {
             ElaTaskDto elaTaskResult = new ElaTaskDto();
 
