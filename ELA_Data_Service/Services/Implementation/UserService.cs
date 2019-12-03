@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using ELA_Data_Service._Data.ElaDataContext;
 using ELA_Data_Service.Contracts.V1.Requests.Users;
@@ -34,7 +35,7 @@ namespace ELA_Data_Service.Services.Implementation
                 await _dataContext.SaveChangesAsync();
                 return new UserPointsUpdateDto { Success = true };
             }
-            else if(request.Action.Equals("add"))
+            else if (request.Action.Equals("add"))
             {
                 user.Points += request.Points;
                 await _dataContext.SaveChangesAsync();
@@ -44,6 +45,26 @@ namespace ELA_Data_Service.Services.Implementation
             {
                 return new UserPointsUpdateDto { Errors = new[] { "Action should be \"add\" or \"reduce\" only" } };
             }
+        }
+
+        public UserDataDto GetUserData(string userId)
+        {
+            var user = _dataContext.Users.FirstOrDefault(x => x.UserId == userId);
+
+            if (user is null)
+                return new UserDataDto { Errors = new[] { "User not found" } };
+
+            return new UserDataDto
+            {
+                UserId = user.UserId,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                BirthDate = user.BirthDate,
+                Points = user.Points,
+                ImgUrl = user.ImgUrl,
+                RegDate = user.RegDate,
+                Success = true
+            };
         }
     }
 

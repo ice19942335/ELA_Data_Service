@@ -23,6 +23,8 @@ namespace ELA_Data_Service.Contracts.V1
         public static class UsersRoutes
         {
             public const string UserPoints = Base + "/Users/Points/{userId}";
+
+            public const string UserData = Base + "/Users/UserData/{userId}";
         }
     }
 }

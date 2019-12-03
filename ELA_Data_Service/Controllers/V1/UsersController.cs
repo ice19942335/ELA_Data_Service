@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ELA_Data_Service.Contracts.V1;
 using ELA_Data_Service.Contracts.V1.Requests.Users;
+using ELA_Data_Service.Contracts.V1.Responses.Users;
 using ELA_Data_Service.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -43,6 +44,34 @@ namespace ELA_Data_Service.Controllers.V1
                 return BadRequest(string.Join(", ", result.Errors));
 
             return NoContent();
+        }
+
+        /// <summary>
+        /// Returns all user data by userId
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        [HttpGet(ApiRoutes.UsersRoutes.UserData)]
+        public IActionResult UserData(string userId)
+        {
+            if (User is null)
+                return NotFound("User not found, please re-login");
+
+            var result = _userService.GetUserData(userId);
+
+            if (!result.Success)
+                return Problem(string.Join(", ", result.Errors.GetEnumerator()), null, 500);
+
+            return Ok(new UserDataResponse
+            {
+                UserId = result.UserId,
+                FirstName = result.FirstName,
+                LastName = result.LastName,
+                BirthDate = result.BirthDate,
+                Points = result.Points,
+                ImgUrl = result.ImgUrl,
+                RegDate = result.RegDate
+            });
         }
     }
 }
