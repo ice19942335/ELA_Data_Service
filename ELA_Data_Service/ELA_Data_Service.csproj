@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="wwwroot\vocabulary\" />
   </ItemGroup>
 
 </Project>
