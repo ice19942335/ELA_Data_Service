@@ -22,7 +22,7 @@ namespace ELA_Data_Service.Controllers.V1
             }
             catch
             {
-                return NotFound("Picture was not found");
+                return NotFound("Picture not found");
             }
         }
     }
