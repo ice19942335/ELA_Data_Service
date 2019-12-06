@@ -26,5 +26,11 @@ namespace ELA_Data_Service.Contracts.V1
 
             public const string UserData = Base + "/Users/UserData/{userId}";
         }
+
+        public static class Pictures
+        {
+            public const string UserPoints = Base + "/Pictures/Vocabulary/{imgName}";
+        }
     }
 }
+
